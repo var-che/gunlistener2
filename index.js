@@ -1,14 +1,19 @@
+
 const express = require('express')
-const Gun = require('gun')
-
+const Gun = require('gun');
 const app = express()
-const port = 8000
+const PORT = process.env.PORT || 5000;
+
 app.use(Gun.serve)
-app.get('/test', (req, res) => {
-  res.send('hello world')
-})
-const server = app.listen(port, () => {
-    console.log("Lisstening at: http://localhost:" + port)
+
+
+app.get('/', (req, res) => {
+    res.send('Hello World!')
 })
 
-Gun({web: server})
+
+const server = app.listen(PORT, () => {
+    console.log(`Example app listening at http://localhost:${PORT}`)
+})
+
+Gun({ web: server });
