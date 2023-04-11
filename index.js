@@ -8,7 +8,7 @@ app.get('/test', (req, res) => {
   res.send('hello world')
 })
 const server = app.listen(port, () => {
-    console.log("Listening at: http://localhost:" + port)
+    console.log("Lisstening at: http://localhost:" + port)
 })
 
 Gun({web: server})
